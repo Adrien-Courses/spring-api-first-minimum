@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Banking API Specification for account operations
+  description: |-
+    A simple banking API that allows two operations:
+    - get account balance given account number
+    - deposit amount to a account
+  version: 1.0-SNAPSHOT
+servers:
+  - url: https://testenvironment.org/api/v1
+  - url: https://prodenvironment.org/api/v1
+tags:
+  - name: accounts
+    description: Operations between bank accounts
+paths:
+  /account:
+    $ref: './paths/account-get.yml'
+  /account/deposit:
+    $ref: './paths/account-deposit.yml'
+
+

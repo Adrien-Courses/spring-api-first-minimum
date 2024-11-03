@@ -1,0 +1,19 @@
+get:
+  tags:
+    - accounts
+  summary: Get account information
+  description: Get account information using account number
+  operationId: getAccount
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Account.yml'
+    404:
+      description: Account not found
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/AccountNotFoundError.yml'

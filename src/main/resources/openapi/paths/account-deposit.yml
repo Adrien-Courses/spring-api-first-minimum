@@ -1,0 +1,22 @@
+post:
+  tags:
+    - accounts
+  summary: Deposit amount to account
+  description: Initiates a deposit operation of a desired amount to the account specified
+  operationId: depositToAccount
+  requestBody:
+    description: Account number and desired amount to deposit
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/DepositRequest.yml'
+    required: true
+  responses:
+    204:
+      description: Success
+    404:
+      description: Account not found
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/AccountNotFoundError.yml'
